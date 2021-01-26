@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
+using OpenTelemetry.Trace;
 using System;
+using System.Text.RegularExpressions;
 
 namespace RockLib.DistributedTracing.AspNetCore
 {
@@ -11,6 +13,8 @@ namespace RockLib.DistributedTracing.AspNetCore
     /// </summary>
     public static class HttpContextExtensions
     {
+        private static readonly Regex BLANK_TRACE_REGEX = new Regex("^0+$");
+
         /// <summary>
         /// Gets the correlation id from an <see cref="HttpContext"/>.
         /// </summary>
@@ -50,6 +54,14 @@ namespace RockLib.DistributedTracing.AspNetCore
                 if (httpContext.GetHeaderValue(correlationIdHeader) is StringValues correlationId && correlationId.Count > 0)
                     accessor.CorrelationId = correlationId;
 
+                // lean on OpenTelemetry for an existing traceId
+                if (accessor.CorrelationId is null)
+                {
+                    string traceId = Tracer.CurrentSpan?.Context.TraceId.ToString();
+                    accessor.CorrelationId = !BLANK_TRACE_REGEX.IsMatch(traceId) ? traceId : null;
+                }
+
+                // fallback to creating a new value
                 if (accessor.CorrelationId is null)
                     accessor.CorrelationId = Guid.NewGuid().ToString();
 
