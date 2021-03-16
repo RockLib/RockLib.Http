@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net5.0;netstandard2.0;net462</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>RockLib.DistributedTracing.Messaging</PackageId>
+    <PackageVersion>1.0.0-alpha00</PackageVersion>
+    <Authors>RockLib</Authors>
+    <Description>Defines distributed tracing extension methods for RockLib.Messaging.</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/RockLib/RockLib.DistributedTracing</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <Copyright>Copyright 2020 (c) Quicken Loans Corporation. All rights reserved.</Copyright>
+    <PackageTags>RockLib Distributed-Tracing Messaging</PackageTags>
+    <Version>1.0.0</Version>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(PackageId).xml</DocumentationFile>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="..\LICENSE.md" Pack="true" PackagePath="" />
+    <None Include="..\icon.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RockLib.Messaging" Version="2.4.4" />
+  </ItemGroup>
+
+</Project>
