@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RockLib.DistributedTracing.AspNetCore\RockLib.DistributedTracing.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\RockLib.DistributedTracing.AspNetCore\RockLib.DistributedTracing.AspNetCore.csproj" />
   </ItemGroup>
 
 </Project>

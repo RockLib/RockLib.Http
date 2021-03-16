@@ -16,7 +16,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{C234D9B1-8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockLib.DistributedTracing.AspNetCore", "RockLib.DistributedTracing.AspNetCore\RockLib.DistributedTracing.AspNetCore.csproj", "{521295BE-E2F5-46A3-AB2F-7C8A904EB43C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockLib.DistributedTracing.AspNetCore.Tests", "RockLib.DistributedTracing.AspNetCore.Tests\RockLib.DistributedTracing.AspNetCore.Tests.csproj", "{262F441E-2CB3-4BCE-9190-740F54E3556A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockLib.DistributedTracing.AspNetCore.Tests", "Tests\RockLib.DistributedTracing.AspNetCore.Tests\RockLib.DistributedTracing.AspNetCore.Tests.csproj", "{262F441E-2CB3-4BCE-9190-740F54E3556A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BF0910B6-9D1B-40CF-8E3A-C9E7534736BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{57E5B917-6D99-4CF0-8A29-6F1753B81EA8} = {25EDE8BF-0FD5-41CB-90A1-76FA24931E76}
+		{262F441E-2CB3-4BCE-9190-740F54E3556A} = {BF0910B6-9D1B-40CF-8E3A-C9E7534736BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {45FC52C1-A8DE-4D82-9DF7-7787F3BE543A}
